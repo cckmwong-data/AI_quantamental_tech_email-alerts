@@ -1,4 +1,4 @@
-# Quantimental Strategy (Part 1): Tech Sector Fundamental Intelligence Dashboard
+# AI-Powered Quantamental Tech Analysis
 
 The **"Quantimental"** approach represents the fusion of **Quantitative** and **Fundamental analysis**, combining the data-driven rigor of mathematical modeling with the deep structural insights of equity research.
 
