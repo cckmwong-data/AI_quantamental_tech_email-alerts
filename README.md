@@ -71,9 +71,9 @@ A visual **Cash Flow Bridge** identifies the specific drivers of cash movement, 
 
 ## How the Pipeline Works
 1.  **Extract:** Python scripts scrape the latest 10-K/10-Q filings. Concurrently, Google Sheets pulls live share prices and historical data via native formulas.
-2.  **Automate:** GitHub Actions triggers the ETL processes which includes i) extraction of financial data,  ii) technical indicators and AI interpretation, and iii) detecting price anomalies with deep learning models, running at **01:00 UTC** (20:00 EST, after the market close) every weekday. Due to security reasons, the actual execution of Github Actions are carried out in separate private Repos. 
+2.  **Automate:** GitHub Actions triggers the ETL processes which includes i) extraction of financial data,  ii) technical indicators and AI interpretation, and iii) detecting price anomalies with deep learning models, running at **01:00 UTC** (EST 20:00, after the market close) every weekday. Due to security reasons, the actual execution of Github Actions are carried out in separate private Repos. 
 3.  **Sync:** Cleaned and structured data is pushed to Google Sheets, serving as a centralized data warehouse.
-4.  **Visualize:** Power BI Service performs a scheduled refresh at 22:00 EST, in order to update the cloud-hosted dashboard.
+4.  **Visualize:** Power BI Service performs a scheduled refresh at EST 22:00, in order to update the cloud-hosted dashboard.
 
 ---
 
