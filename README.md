@@ -1,6 +1,6 @@
 # AI-Powered Quantamental Tech Email Alerts
 
-[This project](https://app.powerbi.com/view?r=eyJrIjoiZDhjZDIzNzUtMDY0OS00MGI0LWI5NTItODZjNzRlY2ExMmIwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D) analyze the tech stocks from different perspectives using **Quantimental** approach - the fusion of **Quantitative** and **Fundamental Analysis**, alongside **Technical Analysis** and daily analysis powered by **Artificial Intelligence**. Investor will be notified by email, whe the system detects price anomaly is detected or a trading signal (i.e. BUY/ SELL) is triggered.
+[This project](https://app.powerbi.com/view?r=eyJrIjoiZDhjZDIzNzUtMDY0OS00MGI0LWI5NTItODZjNzRlY2ExMmIwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D) analyze the tech stocks from different perspectives using **Quantimental** approach - the fusion of **Quantitative** and **Fundamental Analysis**, alongside **Technical Analysis** and daily analysis powered by **Artificial Intelligence**. Investor will be notified by **email** in **real-time**, whe the system detects price anomaly is detected or a trading signal (i.e. BUY/ SELL) is triggered.
 
 ![Flow](images/flow.png)
 
@@ -17,7 +17,7 @@ Most investment tools provide either financial data or technical indicators in i
 ---
 
 ## Key Highlights
-* **Power Automate:** A custom template can be set as email alert to specific users, whenever the system detects price anomaly is detected or a trading signal (i.e. BUY/ SELL) is triggered. This removes the need to constantly monitor dashboards.
+* **Power Automate:** A custom template can be set as email alert to specific users in Power Automate, whenever the system detects price anomaly is detected or a trading signal (i.e. BUY/ SELL) is triggered. This removes the need to constantly monitor dashboards.
 * **Pure Quantimental Fusion:** Successfully combining statistical machine learning (Quantitative) with macroeconomic intrinsic valuation (Fundamental) and momentum architecture (Technical).
 * **Automated ETL:** Python scripts and GitHub Actions refresh the entire financial dataset every 24 hours.
 * **Dynamic Valuation:** An interactive 2-stage DCF engine featuring a WACC vs. Terminal Growth sensitivity matrix.
