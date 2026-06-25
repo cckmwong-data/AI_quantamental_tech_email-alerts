@@ -1,6 +1,6 @@
 # AI-Powered Quantamental Tech Email Alerts
 
-[This project](https://app.powerbi.com/view?r=eyJrIjoiZDhjZDIzNzUtMDY0OS00MGI0LWI5NTItODZjNzRlY2ExMmIwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D) analyze the tech stocks from different perspectives using **Quantitative**, **Fundamental Analysis**, alongside **Technical Analysis** and daily analysis powered by **Artificial Intelligence**. After the market close, report is scheduled for a daily refresh, which may trigger email alerts if any. Investor will be notified by **email**, if the system detects price anomaly or any trading signal (i.e. BUY/ SELL).
+[This project](https://app.powerbi.com/view?r=eyJrIjoiZDhjZDIzNzUtMDY0OS00MGI0LWI5NTItODZjNzRlY2ExMmIwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D) analyze the tech stocks from different perspectives using **Quantitative**, **Fundamental Analysis**, alongside **Technical Analysis** and daily analysis powered by **Artificial Intelligence**. After the market close, report is scheduled for a daily refresh, which may trigger email alerts. Investor will be notified by **email**, if the system detects price anomaly or Buy/Sell trading signals.
 
 ![Flow](images/flow.png)
 
@@ -17,10 +17,11 @@ Most investment tools provide either financial data or technical indicators in i
 ---
 
 ## Email Notification
-If either one of the conditions is met, Power Automate will send an email alert to investors to 
+If either one of the conditions is met, Power Automate will send an email alert to investors.
+
 * **Price Anomaly**: An anomaly is flagged for the current stock price.
-* **Trading Signal (Buy)**: The current stock price exhibits a potential upside of > 15% relative to the average consensus target price from Yahoo Finance, plus a "Buy" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
-* **Trading Signal (Sell)**: The current stock price exhibits a potential downside of < 0% relative to the average consensus target price from Yahoo Finance, plus a "Sell" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
+* **Buy Trading Signal**: The current stock price exhibits a potential upside of > 15% relative to the average consensus target price from Yahoo Finance, plus a "Buy" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
+* **Sell Trading Signal**: The current stock price exhibits a potential downside of < 0% relative to the average consensus target price from Yahoo Finance, plus a "Sell" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
 
 ![Email](images/email1.png)
 ![Email](images/email2.png)
