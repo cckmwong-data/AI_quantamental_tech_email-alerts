@@ -19,8 +19,11 @@ Most investment tools provide either financial data or technical indicators in i
 ## Email Notification
 If either one of the conditions is met, Power Automate will send an email alert to investors to 
 * **Price Anomaly**: An anomaly is flagged for the current stock price.
-* **Trading Signal (Buy)**: The current stock price exhibits a potential upside of > 15% relative to the average consensus target price from Yahoo Finance, plus a "Buy" signal in technical indicators (Bollinger Band/ RSI + MACD)
-* **Trading Signal (Sell)**: The current stock price exhibits a potential downside of < 0% relative to the average consensus target price from Yahoo Finance, plus a "Sell" signal in technical indicators (Bollinger Band/ RSI + MACD)
+* **Trading Signal (Buy)**: The current stock price exhibits a potential upside of > 15% relative to the average consensus target price from Yahoo Finance, plus a "Buy" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
+* **Trading Signal (Sell)**: The current stock price exhibits a potential downside of < 0% relative to the average consensus target price from Yahoo Finance, plus a "Sell" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
+
+![Email](images/email1.png)
+![Email](images/email2.png)
 
 ---
 
