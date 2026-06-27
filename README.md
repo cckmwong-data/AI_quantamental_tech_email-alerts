@@ -2,7 +2,7 @@
 
 [This project](https://app.powerbi.com/view?r=eyJrIjoiZDhjZDIzNzUtMDY0OS00MGI0LWI5NTItODZjNzRlY2ExMmIwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D) analyze the tech stocks from different perspectives using **Quantitative**, **Fundamental Analysis**, alongside **Technical Analysis** and daily analysis powered by **Artificial Intelligence**. After the market close, report is scheduled for a daily refresh, which may trigger email alerts. Investor will be notified by **email**, if the system detects price anomaly or Buy/Sell trading signals.
 
-![Flow](images/flow.png)
+![Flow](images/flow_final.png)
 
 ---
 
