@@ -19,9 +19,9 @@ Most investment tools provide either financial data or technical indicators in i
 ## Email Notification
 If either one of these conditions is met, Power Automate will send an email alert to designated user(s).
 
-* **Price Anomaly**: An anomaly is flagged by referencing its current stock price to the price history.
-* **Buy Trading Signal**: The current stock price exhibits a potential upside of > 15% relative to the average consensus target price, plus a "Buy" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
-* **Sell Trading Signal**: The current stock price exhibits a potential downside of < 0% relative to the average consensus target price, plus a "Sell" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
+* **Price Anomaly**: An anomaly is flagged by referencing its current stock price to its price history.
+* **Buy Trading Signal**: The current stock price exhibits a potential upside of greater than 15% relative to the average consensus target price, plus a "Buy" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
+* **Sell Trading Signal**: The current stock price shows a potential negative return compared to the average consensus target price, plus a "Sell" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
   
 ![Email](images/email2.png)
 
@@ -33,9 +33,9 @@ If either one of these conditions is met, Power Automate will send an email aler
 * **Power Automate:** A custom template is set as email alert to specific people in Power Automate, whenever the system detects price anomaly or trading signal(s). This removes the need to constantly monitor dashboards.
 * **Quantimental Fusion:** Successfully combining statistical machine learning (Quantitative) with macroeconomic intrinsic valuation (Fundamental) and momentum architecture (Technical).
 * **Dynamic Valuation:** An interactive 2-stage DCF engine featuring a WACC vs. Terminal Growth sensitivity matrix.
-* **Advanced LLM Analytical Context:** Moves beyond generic AI prompts by feeding raw, structured Open-High-Low-Close (OHLC) data and calculated mathematical overlays (RSI/MACD) directly into **Gemini 2.5**, turning raw technical data points into clear, executive-level market summaries.
+* **Advanced LLM Analytical Context:** Moves beyond generic AI prompts by feeding raw, structured market data and calculated mathematical overlays (RSI/MACD) directly into **Gemini 2.5**, turning raw technical data points into clear, executive-level market summaries.
 * **Full Financial Stack:** Deep-dive modules for Income Statement, Balance Sheet, and Cash Flow (including a visual Cash Flow Bridge).
-* **Automated ETL:** Python scripts and GitHub Actions refresh the entire financial dataset every 24 hours. Power BI report is scheduled for daily refresh at designated time.
+* **Automated ETL:** Python scripts and GitHub Actions refresh the entire financial dataset every 24 hours. Power BI report is scheduled for a daily refresh at designated time.
 
 ---
 
@@ -43,14 +43,14 @@ If either one of these conditions is met, Power Automate will send an email aler
 ### Quantitaive Finance
 Long Short-Term Memory (LSTM) autoencoder is used to reconstruct stock price log returns and identify unusual relative movements. If the model struggles to accurately reconstruct a sequence (i.e., produces a large reconstruction error), the sequence likely contains anomalous behavior. Anomalies are flagged when the deviation between the actual and reconstructed log return exceeds the rolling threshold (i.e. rolling mean + rolling standard deviation of the reconstruction error). 
 
-The results of price anomalies are written to Google Sheet, whereas the model is saved as for future prediction in a separate python script which runs daily in Github Action. 
+Price anomalies are logged directly to a Google Sheet, while the trained model is saved for future predictions. A separate Python script, scheduled and monitored via GitHub Actions, runs the model daily for detecting any price anomalies.
 
 ![](images/loss_meta.png)
 
 ![](images/anomalies_tsla.png)
 
 ### Fundamental Analysis
-In the 2-stage DCF Model, we analyze the free cash flows of the company into two stages - a fast growth phase for the first five years where the company is expanding rapidly, and a steady growth phase for the following five years as the business matures. Terminal value is calculated at the end of the tenth year, representing what the company is worth from year eleven into the forever-future. Finally, the mode discounts those future earnings at Weighted Average Cost of Capital (WACC), which shows how much the company is worth today.
+In the 2-stage DCF Model, we analyze the free cash flows of the company into two stages - a fast growth phase for the first five years where the company is expanding rapidly, and a steady growth phase for the following five years as the business matures. Terminal value is calculated at the end of the tenth year, representing what the stock is worth from year eleven into the forever-future. Finally, the mode discounts those future earnings at Weighted Average Cost of Capital (WACC), which shows how much it is worth today.
 
 ### Technical Analysis & AI
 An automated AI Analysis synthesizes these data points to provide an instant summary—evaluating whether a stock is overbought, oversold, or consolidating. In addition, investment signals are generated by analyzing various technical indicators, to help investors make informed, data-driven decisions at a glance.  Technical charts include a candlestick chart with Bollinger Bands to visualize price extensions, alongside Relative Strength Index (RSI) and Moving Average Convergence/ Divergence (MACD) trackers to identify trend strength.
@@ -63,21 +63,21 @@ An automated AI Analysis synthesizes these data points to provide an instant sum
 
 ✔ **Financial Modeling:** 2-Stage **Discounted Cash Flow (DCF)**, WACC calculation, terminal value estimation, and ratio analysis (Liquidity, Solvency, Profitability).
 
-✔ **Advanced LLM Orchestration:** Developed programmatic context injection for **Gemini 2.5**, moving beyond basic prompting to feed raw daily market data (OHLC) and mathematical technical indicators (RSI, MACD, Bollinger Bands) into an AI to generate structural, human-readable market narratives.
+✔ **Advanced LLM Orchestration:** Developed programmatic context injection for **Gemini 2.5**, moving beyond basic prompting to feed raw daily market data and mathematical technical indicators (RSI, MACD, Bollinger Bands) into an AI to generate structural, human-readable market narratives.
 
-✔ **Event-Driven Alerting & Communication:** Integrated an automated SMTP/API email notification engine that monitors data states and immediately dispatches real-time, high-priority alerts to investors upon detecting anomalies or signal triggers.
+✔ **Event-Driven Alerting & Communication:** Integrated an automated email notification that monitors data states and immediately dispatches real-time, high-priority alerts to investors upon detecting anomalies or signal triggers.
 
 ---
 
 ## Dashboard Breakdown
 
 ### 1. Price Anomaly & Trading Decisions by Fundamental Analysis
-Here shows the presence/ absence of price anomaly, and trading signals (Buy/ Hold/ Sell) by comparing the current share price to 1. average consenus price target (from Yahoo Finance) and 2. the intrinsic value on user's assumptions.
+Here shows the presence/ absence of **price anomaly**, and **trading signals** (Buy/ Hold/ Sell) by comparing the current share price to 1. average consenus price target (from Yahoo Finance) and 2. the intrinsic value on user's assumptions.
 
 ![Valuation Dashboard](images/valuation.png)
 
 ### 2. AI & Trading Decisions by Technical Analysis
-It tracks the momentum and price boundaries through integrated Relative Strength Index (RSI), MACD, and Bollinger Bands charts. Gemini 2.5 synthesizes these live technical indicators alongside the price data to deliver an automated, actionable market narrative and an overall trading signal.
+It tracks the momentum and price boundaries through integrated Relative Strength Index (RSI), MACD, and Bollinger Bands charts. **Gemini 2.5** synthesizes these live technical indicators alongside the price data to deliver an automated, actionable market narrative and an overall trading signal.
 
 ![Technical Analysis](images/technical_AI.png)
 
