@@ -84,15 +84,21 @@ It tracks the momentum and price boundaries through integrated Relative Strength
 ### 3. Income Statement & Margin Analysis
 Monitor **revenue growth** and **margin expansion**. Track how COGS, R&D, and SG&A evolve as a percentage of total revenue to identify scaling efficiency.
 
-![Income Statement Analysis](images/IS4.png)
+![Income Statement Analysis](images/IS1.png)
+
+![Income Statement Analysis](images/IS2.png)
 
 ### 4. Balance Sheet & Liquidity
 Analyze **solvency** and **working capital efficiency**. This section highlights the **Cash Conversion Cycle (CCC)**, **Quick Ratio** trends, and **debt profiles**.
+
+![Balance Sheet Charts](images/BS1.png)
 
 ![Balance Sheet Charts](images/BS2.png)
 
 ### 5. Cash Flow Dynamics
 A visual **Cash Flow Bridge** identifies the specific drivers of cash movement, allowing for an "Earnings Quality" check by comparing Net Income to Free Cash Flow.
+
+![Cash Flow Bridge](images/CF1.png)
 
 ![Cash Flow Bridge](images/CF2.png)
 
