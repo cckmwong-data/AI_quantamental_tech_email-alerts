@@ -1,6 +1,6 @@
 # AI-Powered Quantamental Tech Email Alerts
 
-[This project](https://app.powerbi.com/view?r=eyJrIjoiZDhjZDIzNzUtMDY0OS00MGI0LWI5NTItODZjNzRlY2ExMmIwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D) analyze US tech stocks from different multi perspectives - **1. Quantitative**, **2. Fundamental Analysis**, and **3. Technical Analysis** with daily analysis powered by **Artificial Intelligence**. All data will be refreshed on a daily basis after the market closes. System will send email alerts to designated user(s), if price anomaly and/or trading signals are detected.
+[This project](https://app.powerbi.com/view?r=eyJrIjoiZDhjZDIzNzUtMDY0OS00MGI0LWI5NTItODZjNzRlY2ExMmIwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D) analyzes US tech stocks from different multiple perspectives - **1. Quantitative**, **2. Fundamental Analysis**, and **3. Technical Analysis** with daily analysis powered by **Artificial Intelligence**. All data will be refreshed on a daily basis after the market closes. The system will send email alerts to designated user(s), if price anomaly and/or trading signals are detected.
 
 ![Flow](images/flow_final.png)
 
@@ -17,11 +17,11 @@ Most investment tools provide either financial data or technical indicators in i
 ---
 
 ## Email Notification
-If either one of these conditions is met, Power Automate will send an email alert to designated user(s).
+If any of these conditions are met, Power Automate will send an email alert to designated user(s).
 
 * **Price Anomaly**: An anomaly is flagged by referencing its current stock price to its price history.
 * **Buy Trading Signal**: The current stock price exhibits a potential upside of greater than 15% relative to the average consensus target price, plus a "Buy" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
-* **Sell Trading Signal**: The current stock price shows a potential negative return compared to the average consensus target price, plus a "Sell" signal seen in technical indicators (Bollinger Band/ RSI + MACD)
+* **Sell Trading Signal**: The current stock price shows a potential negative return compared to the average consensus target price, plus a "Sell" signal seen in technical indicators (Bollinger Band/ RSI + MACD).
   
 ![Email](images/email2.png)
 
@@ -40,8 +40,8 @@ If either one of these conditions is met, Power Automate will send an email aler
 ---
 
 ## Methodologies
-### Quantitaive Finance
-Long Short-Term Memory (LSTM) autoencoder is used to reconstruct stock price log returns and identify unusual relative movements. If the model struggles to accurately reconstruct a sequence (i.e., produces a large reconstruction error), the sequence likely contains anomalous behavior. Anomalies are flagged when the deviation between the actual and reconstructed log return exceeds the rolling threshold (i.e. rolling mean + rolling standard deviation of the reconstruction error). 
+### Quantitative Finance
+Long Short-Term Memory (LSTM) autoencoder is used to reconstruct stock price log returns and identify unusual relative movements. If the model struggles to accurately reconstruct a sequence (i.e., produces a large reconstruction error), the sequence likely contains anomalous behavior. Anomalies are flagged when the deviation between the actual and reconstructed log return exceeds the rolling threshold (i.e. the rolling mean + rolling standard deviation of the reconstruction error). 
 
 Price anomalies are logged directly to a Google Sheet, while the trained model is saved for future predictions. A separate Python script, scheduled and monitored via GitHub Actions, runs the model daily for detecting any price anomalies.
 
@@ -50,7 +50,7 @@ Price anomalies are logged directly to a Google Sheet, while the trained model i
 ![](images/anomalies_tsla.png)
 
 ### Fundamental Analysis
-In the 2-stage DCF Model, we analyze the free cash flows of the company into two stages - a fast growth phase for the first five years where the company is expanding rapidly, and a steady growth phase for the following five years as the business matures. Terminal value is calculated at the end of the tenth year, representing what the stock is worth from year eleven into the forever-future. Finally, the mode discounts those future earnings at Weighted Average Cost of Capital (WACC), which shows how much it is worth today.
+In the 2-stage DCF Model, we analyze the free cash flows of the company in two stages - a fast growth phase for the first five years where the company is expanding rapidly, and a steady growth phase for the following five years as the business matures. Terminal value is calculated at the end of the tenth year, representing what the stock is worth from year eleven into the forever-future. Finally, the model discounts those future earnings at Weighted Average Cost of Capital (WACC), which shows how much it is worth today.
 
 ### Technical Analysis & AI
 An automated AI Analysis synthesizes these data points to provide an instant summary—evaluating whether a stock is overbought, oversold, or consolidating. In addition, investment signals are generated by analyzing various technical indicators, to help investors make informed, data-driven decisions at a glance.  Technical charts include a candlestick chart with Bollinger Bands to visualize price extensions, alongside Relative Strength Index (RSI) and Moving Average Convergence/ Divergence (MACD) trackers to identify trend strength.
@@ -72,7 +72,7 @@ An automated AI Analysis synthesizes these data points to provide an instant sum
 ## Dashboard Breakdown
 
 ### 1. Price Anomaly & Trading Decisions by Fundamental Analysis
-Here shows the presence/ absence of **price anomaly**, and **trading signals** (Buy/ Hold/ Sell) by comparing the current share price to 1. average consenus price target (from Yahoo Finance) and 2. the intrinsic value on user's assumptions.
+This section shows the presence/ absence of **price anomaly**, and **trading signals** (Buy/ Hold/ Sell) by comparing the current share price to 1. average consensus price target (from Yahoo Finance) and 2. the intrinsic value on user's assumptions.
 
 ![Valuation Dashboard](images/valuation.png)
 
